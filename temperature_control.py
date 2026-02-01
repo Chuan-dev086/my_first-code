@@ -23,6 +23,11 @@ while True:
         fahrenheit = celsius * 1.8 + 32
         print(f">>>转换结果：{fahrenheit}F")
 
+        with open ("temperature_log.txt","a",encoding="utf-8")as file: 
+          file.write(f"温度记录：{fahrenheit}F\n") 
+
+        history_fahrenheit.append(fahrenheit)
+        
         if fahrenheit >= 212:
             print("[报警]:检测到沸腾状态！")
 
@@ -30,4 +35,4 @@ while True:
             print("[状态]:稳定")
 
     except ValueError:
-        print("[错误]：无效输入！请输入有效数值或'q'。")
+     print("[错误]：无效输入！请输入有效数值或'q'。")
