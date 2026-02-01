@@ -1,15 +1,20 @@
-while True: 
-    print("\n---新的访客---") 
-    age_input=input 
+while True:
+    age_input=input ("请输入你的年龄（输入 'q' 退出）:")
 
-    if age_input=='quit': 
-        print("门禁系统关闭，再见！") 
+    if age_input.lower()=='q': 
+        print("程序已退出。") 
         break 
 
-    age_input=input("请输入你的年龄：")
-    age= int(age_input) 
-    if age >=18: 
-        print("验证通过，请进。") 
-    else: 
-        print("未成年，禁止进入。") 
+    try: 
+        age=int(age_input) 
+        if age>=18: 
+             print("成年，允许进入。")  
+        else:
+            print("未成年，禁止进入。")  
+    except ValueError: 
+        print("⚠️ 输入错误！请输入纯数字。")  
+
+print("--- 感谢使用 ---")
+
+   
         
